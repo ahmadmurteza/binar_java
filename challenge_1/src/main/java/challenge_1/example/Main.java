@@ -50,8 +50,6 @@ public class Main {
     }
 
     private static void pesananInput(String option, JumlahTotal object) {
-        
-
         switch (option) {
             case "1":
                 penjumlahan("Nasi Goreng         | ", nasiGoreng,  object);
@@ -95,8 +93,6 @@ public class Main {
         if (qty <= 0) {
             tampilkanMenu(object);
         } else {
-
-
             switch (varInput) {
                 case 15000:
                     object.setJmlNasiGoreng(qty);
@@ -164,6 +160,11 @@ public class Main {
         option = input.next();
         switch (option) {
             case "1":
+                if (jumlahPesanan <= 0 || totalPembayaran <= 0 ) {
+                    System.out.println("\n");
+                    System.out.println("Belum memesan menu sama sekali \n");
+                    tampilkanMenu(object);
+                }
                 printStruk(object);
                 break;
             case "2":
