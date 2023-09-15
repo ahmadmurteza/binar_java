@@ -8,9 +8,6 @@ import java.io.Writer;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import javax.tools.JavaFileObject; 
-
-
 public class Main {
 
     private static int nasiGoreng = 15000;
@@ -22,7 +19,6 @@ public class Main {
     private static Scanner input = new Scanner(System.in);
     private static String option;
     private static int qty;
-
 
     // formating uang
     private static String formatPrint(int input) {
@@ -80,7 +76,6 @@ public class Main {
 
     }
 
-
     private static void penjumlahan(String menu, int varInput, JumlahTotal object) {
         System.out.println("==========================");
         System.out.println("Berapa pesanan anda");
@@ -123,26 +118,25 @@ public class Main {
         }
     }
 
-
     private static void pesanBayar(JumlahTotal object) {
         System.out.println("==========================");
         System.out.println("Konfirmasi & pembayaran");
         System.out.println("==========================");
         System.out.println("");
         if (object.jmlNasiGoreng > 0) {
-            System.out.println("Nasi Goreng     " + object.jmlNasiGoreng +"       "+ object.totalNasiGoreng);
+            System.out.println("Nasi Goreng     " + formatPrint(object.jmlNasiGoreng) +"       "+ formatPrint(object.totalNasiGoreng));
         } 
         if (object.jmlMieGoreng > 0) {
-            System.out.println("Mie Goreng      " + object.jmlMieGoreng +"       "+ object.totalMieGoreng);
+            System.out.println("Mie Goreng      " + formatPrint(object.jmlMieGoreng) +"       "+ formatPrint(object.totalMieGoreng));
         }
         if (object.jmlNasiAyam > 0) {
-            System.out.println("Nasi + Ayam     " + object.jmlNasiAyam +"       "+ object.totalNasiAyam);
+            System.out.println("Nasi + Ayam     " + formatPrint(object.jmlNasiAyam) +"       "+ formatPrint(object.totalNasiAyam));
         }
         if (object.jmlEsTehManis > 0) {
-            System.out.println("Es Teh Manis    " + object.jmlEsTehManis +"       "+ object.totalEsTehManis);
+            System.out.println("Es Teh Manis    " + formatPrint(object.jmlEsTehManis) +"       "+ formatPrint(object.totalEsTehManis));
         }
         if (object.jmlEsJeruk > 0) {
-            System.out.println("Es Jeruk        " + object.jmlEsJeruk +"       "+ object.totalEsJeruk);
+            System.out.println("Es Jeruk        " + formatPrint(object.jmlEsJeruk) +"       "+ formatPrint(object.totalEsJeruk));
         }
 
         int jumlahPesanan = object.jmlNasiGoreng + object.jmlMieGoreng + object.jmlNasiAyam + object.jmlEsTehManis + object.jmlEsJeruk;
@@ -234,8 +228,6 @@ public class Main {
         }
         tampilkanMenu(object);
     }
-
-    
 
     public static void main(String[] args) {
 
